@@ -1,147 +1,4 @@
-/* Reset & Base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8f9fa;
-  color: #333;
-}
-
-a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-/* Layout Wrapper */
-.site-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Header */
-header {
-  background: #111827;
-  color: white;
-  padding: 1rem 0;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-header h1 {
-  font-size: 1.5rem;
-}
-
-nav {
-  margin-top: 0.5rem;
-}
-
-nav a {
-  margin-left: 20px;
-  font-weight: bold;
-  color: #fff;
-}
-
-nav a:first-child {
-  margin-left: 0;
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  background: #0f172a;
-  color: white;
-  padding: 4rem 0;
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* Animated Background */
-.ai-animation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 300%;
-  background-image: radial-gradient(circle, #00e0ff 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: moveGrid 30s linear infinite;
-  opacity: 0.06;
-  z-index: 1;
-}
-
-@keyframes moveGrid {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-80px, -80px);
-  }
-}
-
-/* Sections */
-.section {
-  padding: 3rem 0;
-}
-
-.section h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-/* Footer */
-footer {
-  background: #111827;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }/* Basic Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -154,7 +11,7 @@ html, body {
   background: #f8f9fa;
 }
 
-/* Layout wrapper */
+/* Layout */
 .site-wrapper {
   display: flex;
   flex-direction: column;
@@ -165,7 +22,6 @@ main {
   flex: 1;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -182,7 +38,6 @@ header {
 .header-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -191,16 +46,16 @@ header h1 {
 }
 
 nav a {
+  color: white;
   margin-left: 1rem;
-  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Hero section */
+/* Hero */
 .hero {
   position: relative;
-  background-color: #0f172a;
+  background: #0f172a;
   color: white;
   padding: 4rem 1rem;
   overflow: hidden;
@@ -212,25 +67,47 @@ nav a {
   z-index: 2;
 }
 
-.ai-animation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 300%;
-  background-image: radial-gradient(circle, #00e0ff 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.07;
-  animation: moveGrid 30s linear infinite;
-  z-index: 1;
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes moveGrid {
-  from {
-    transform: translate(0, 0);
+/* Particles */
+.particles span {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #00e0ff;
+  opacity: 0.2;
+  border-radius: 50%;
+  animation: float 15s linear infinite;
+}
+
+.particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particles span:nth-child(2) { left: 25%; animation-delay: 2s; }
+.particles span:nth-child(3) { left: 40%; animation-delay: 4s; }
+.particles span:nth-child(4) { left: 55%; animation-delay: 6s; }
+.particles span:nth-child(5) { left: 70%; animation-delay: 8s; }
+.particles span:nth-child(6) { left: 85%; animation-delay: 10s; }
+.particles span:nth-child(7) { left: 30%; animation-delay: 1s; }
+.particles span:nth-child(8) { left: 60%; animation-delay: 3s; }
+.particles span:nth-child(9) { left: 90%; animation-delay: 5s; }
+
+@keyframes float {
+  0% {
+    bottom: -20px;
+    transform: translateY(0) scale(0.5);
+    opacity: 0.2;
   }
-  to {
-    transform: translate(-80px, -80px);
+  50% {
+    opacity: 0.5;
+    transform: translateY(-100px) scale(1);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateY(-200px) scale(0.3);
   }
 }
 
@@ -240,8 +117,8 @@ nav a {
 }
 
 .section h3 {
-  font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Footer */
@@ -250,6 +127,7 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
 /* Responsive */
@@ -260,26 +138,82 @@ footer {
   }
 
   nav a {
-    display: block;
     margin: 0.5rem 0 0;
   }
+}
 
-  .hero h2 {
-    font-size: 1.6rem;
+.about-section {
+  position: relative;
+  background: linear-gradient(-45deg, #00e0ff, #7928ca, #ff0080, #00e0ff);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  color: white;
+  padding: 4rem 1rem;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(0, 255, 255, 0.2);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
+.about-section .container {
+  position: relative;
+  z-index: 2;
+}
 
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
+#contact {
+  position: relative;
+  background: #121a2c;
+  color: #e0e7ff;
+  padding: 4rem 1rem;
+  overflow: hidden;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Container for bubbles */
+#contact .bubbles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So clicks pass through */
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Each bubble */
+#contact .bubble {
+  position: absolute;
+  bottom: -50px; /* start below the view */
+  background: rgba(0, 224, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Bubble animation */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
   }
-
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .section h3 {
-    font-size: 1.3rem;
+  100% {
+    transform: translateY(-120vh) scale(1.3);
+    opacity: 0;
   }
 }
+
